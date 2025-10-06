@@ -37,9 +37,9 @@ export const register = async (req, res) => {
 
         // Send a welcome email to the user
         const mailOptions = {
-            from: "abhishek4712ak@gmail.com",
+            from: process.env.sender'sEmail,
             to: email,
-            subject: "Welcome to our app",
+            subject: "Welcome to our website",
             text: `Welcome to our website.
             Your account has been created with email id : ${email}`
         };
@@ -147,11 +147,10 @@ export const sendVerifyOtp = async (req, res) => {
         user.verifyOtp = otp;
         user.verifyOtpExpireAt = Date.now() + 24 * 60 * 60 * 1000;
         await user.save();
-        console.log(otp);
 
         // Send the OTP to the user's email
         const mailOptions = {
-            from: "abhishek4712ak@gmail.com",
+            from: process.env.sendOTPmailId,
             to: user.email,
             subject: "Verify your account",
             text: `Your OTP for verification is ${otp}.
@@ -202,7 +201,7 @@ export const verifyEmail = async (req, res) => {
 
         //send a welcome email to the user
         const mailOptions = {
-            from: "abhishek4712ak@gmail.com",
+            from: process.env.sender'sEmail,
             to: user.email,
             subject: "Welcome to our app",
             text: `Welcome to our website.
@@ -248,7 +247,7 @@ export const sendResetPasswordOtp = async (req, res) => {
 
         // Send the OTP to the user's email
         const mailOptions = {
-            from: "abhishek4712ak@gmail.com",
+            from: process.env.sender'sEmail,
             to: user.email,
             subject: "Reset your password",
             text: `Your OTP for resetting your password is ${otp}.
@@ -302,4 +301,5 @@ export const resetPassword = async (req, res) => {
     } catch (error) {
         res.json({success: false, message: error.message});
     }
+
 }
