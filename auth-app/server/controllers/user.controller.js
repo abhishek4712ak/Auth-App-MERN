@@ -16,11 +16,12 @@ export const getUserData = async (req, res) => {
             message: "User data fetched successfully", 
             userData: {
                 name: user.name,
-                isAccountVerified: user.isAccountVerifieds
+                isAccountVerified: user.isAccountVerified
             }
         });
 
     } catch (error) {
         return res.json({success: false, message: error.message});
     }
+
 }
