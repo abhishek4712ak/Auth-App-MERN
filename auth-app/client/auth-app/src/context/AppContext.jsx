@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = "https://auth-app-mern-pxa8.onrender.com";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(false);
     const getUserData = async () => {
@@ -31,4 +31,5 @@ export const AppContextProvider = (props) => {
         </AppContext.Provider>
     )
     
+
 }   
