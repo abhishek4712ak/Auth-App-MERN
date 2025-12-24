@@ -37,7 +37,7 @@ export const register = async (req, res) => {
 
         // Send a welcome email to the user
         const mailOptions = {
-            from: process.env.sender'sEmail,
+            from: "abhishek4712ak1@gmail.com,
             to: email,
             subject: "Welcome to our website",
             text: `Welcome to our website.
@@ -150,7 +150,7 @@ export const sendVerifyOtp = async (req, res) => {
 
         // Send the OTP to the user's email
         const mailOptions = {
-            from: process.env.sendOTPmailId,
+            from: "abhishek4712ak1@gmail.com",
             to: user.email,
             subject: "Verify your account",
             text: `Your OTP for verification is ${otp}.
@@ -247,7 +247,7 @@ export const sendResetPasswordOtp = async (req, res) => {
 
         // Send the OTP to the user's email
         const mailOptions = {
-            from: process.env.sender'sEmail,
+            from: "abhishek4712ak1@gmail.com",
             to: user.email,
             subject: "Reset your password",
             text: `Your OTP for resetting your password is ${otp}.
@@ -303,3 +303,4 @@ export const resetPassword = async (req, res) => {
     }
 
 }
+
