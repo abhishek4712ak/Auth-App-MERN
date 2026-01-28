@@ -13,7 +13,7 @@ const PORT = 5000;
 
 connectDB();
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['http://localhost:5173',"https://auth-app-mern-two.vercel.app/"];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -35,6 +35,7 @@ app.use("/api/user", userRouter);
 app.listen(8000, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
 
