@@ -37,7 +37,7 @@ export const register = async (req, res) => {
 
         // Send a welcome email to the user
         const mailOptions = {
-            from: "abhishek4712ak1@gmail.com,
+            from: "abhishek4712ak1@gmail.com",
             to: email,
             subject: "Welcome to our website",
             text: `Welcome to our website.
@@ -303,4 +303,5 @@ export const resetPassword = async (req, res) => {
     }
 
 }
+
 
