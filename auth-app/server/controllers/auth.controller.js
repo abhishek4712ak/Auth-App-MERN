@@ -201,7 +201,7 @@ export const verifyEmail = async (req, res) => {
 
         //send a welcome email to the user
         const mailOptions = {
-            from: process.env.sender'sEmail,
+            from: "abhishek4712ak1@gmail.com",
             to: user.email,
             subject: "Welcome to our app",
             text: `Welcome to our website.
@@ -303,5 +303,6 @@ export const resetPassword = async (req, res) => {
     }
 
 }
+
 
 
