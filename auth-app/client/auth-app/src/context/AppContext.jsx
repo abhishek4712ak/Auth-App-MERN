@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
-    const backendUrl = "https://auth-app-mern-1.onrender.com";
+    const backendUrl = "https://auth-app-mern-2.onrender.com";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(false);
     const getUserData = async () => {
@@ -33,5 +33,6 @@ export const AppContextProvider = (props) => {
     
 
 }   
+
 
 
