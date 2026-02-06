@@ -17,13 +17,7 @@ const allowedOrigins = ['http://localhost:5173',"https://auth-app-mern-two.verce
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(cors({
-  credentials: true,
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors("https://auth-app-mern-two.vercel.app/"));
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -35,6 +29,7 @@ app.use("/api/user", userRouter);
 app.listen(8000, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
 
