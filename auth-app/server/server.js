@@ -13,11 +13,15 @@ const PORT = 5000;
 
 connectDB();
 
-const allowedOrigins = ['http://localhost:5173',"https://auth-app-mern-two.vercel.app/"];
-
+const corsOptions = {
+  origin: "https://auth-app-mern-two.vercel.app/"), // Your production domain
+  methods: ['GET', 'POST', 'OPTIONS'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Allow credentials (cookies)
+};
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors("https://auth-app-mern-two.vercel.app/"));
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Hello World");
@@ -29,6 +33,7 @@ app.use("/api/user", userRouter);
 app.listen(8000, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 
 
 
